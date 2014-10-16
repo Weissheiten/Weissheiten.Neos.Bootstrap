@@ -1,0 +1,36 @@
+// alter the prototype to apply the changes to each menu used
+prototype(TYPO3.Neos:Menu){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Menu.html'
+    site = ${site}
+    attributes{
+        class = 'nav navbar-nav'
+    }
+}
+
+prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(TYPO3.Neos:Content)
+prototype(Weissheiten.Neos.Bootstrap:Jumbotron){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Jumbotron.html'
+    sectionName = 'jumbotron'
+
+    jumbotronItems = TYPO3.Neos:ContentCollection{
+        nodePath = 'jumbotronItems'
+    }
+}
+
+prototype(Weissheiten.Neos.Bootstrap:Panel) < prototype(TYPO3.Neos:Content)
+prototype(Weissheiten.Neos.Bootstrap:Panel){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Panel.html'
+    sectionName = 'panel'
+    headerIncluded = ${q(node).property('headerIncluded')}
+    footerIncluded = ${q(node).property('footerIncluded')}
+
+    panelItems = TYPO3.Neos:ContentCollection{
+        nodePath = 'panelItems'
+    }
+    panelHeader = TYPO3.Neos.NodeTypes:Headline{
+        @override.node = ${q(node).children('panelHeader').get(0)}
+    }
+    panelFooter = TYPO3.Neos.NodeTypes:Text{
+        @override.node = ${q(node).children('panelFooter').get(0)}
+    }
+}

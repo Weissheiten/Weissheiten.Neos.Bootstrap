@@ -1,0 +1,47 @@
+'Weissheitne.Neos.Bootstrap:Jumbotron':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Jumbotron'
+    icon: 'icon-sign-blank'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+  childNodes:
+    jumbotronItems:
+      type: 'TYPO3.Neos:ContentCollection'
+
+'Weissheiten.Neos.Bootstrap:Panel':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Panel'
+    icon: 'icon-check-empty'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        layout:
+          label: 'Layout'
+          position: 10
+  properties:
+    headerIncluded:
+      type: boolean
+      defaultValue: false
+      ui:
+        reloadIfChanged: TRUE
+        label: Header
+        inspector:
+          group: 'layout'
+    footerIncluded:
+      type: boolean
+      defaultValue: false
+      ui:
+        reloadIfChanged: TRUE
+        label: Footer
+        inspector:
+          group: 'layout'
+  childNodes:
+    panelHeader:
+      type: 'TYPO3.Neos.NodeTypes:Headline'
+    panelFooter:
+      type: 'TYPO3.Neos.NodeTypes:Text'
+    panelItems:
+      type: 'TYPO3.Neos:ContentCollection'
