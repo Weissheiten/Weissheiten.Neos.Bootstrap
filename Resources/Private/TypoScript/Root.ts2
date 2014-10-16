@@ -23,6 +23,7 @@ prototype(Weissheiten.Neos.Bootstrap:Panel){
     sectionName = 'panel'
     headerIncluded = ${q(node).property('headerIncluded')}
     footerIncluded = ${q(node).property('footerIncluded')}
+    panelStyle = ${q(node).property('panelStyle')}
 
     panelItems = TYPO3.Neos:ContentCollection{
         nodePath = 'panelItems'

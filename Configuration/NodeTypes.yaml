@@ -38,6 +38,29 @@
         label: Footer
         inspector:
           group: 'layout'
+    panelStyle:
+      type: string
+      defaultValue: ''
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Panel style'
+        inspector:
+          group: 'layout'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'Standard'
+              'panel-primary':
+                label: 'Primary'
+              'panel-success':
+                label: 'Success'
+              'panel-info':
+                label: 'Info'
+              'panel-warning':
+                label: 'Warning'
+              'panel-danger':
+                label: 'Danger'
   childNodes:
     panelHeader:
       type: 'TYPO3.Neos.NodeTypes:Headline'

@@ -3,10 +3,10 @@
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers">
 
-<f:render section="panel" arguments="{panelItems: panelItems, panelHeader: panelHeader, panelFooter: panelFooter, headerIncluded: headerIncluded, footerIncluded: footerIncluded }" />
+<f:render section="panel" arguments="{panelItems: panelItems, panelHeader: panelHeader, panelFooter: panelFooter, headerIncluded: headerIncluded, footerIncluded: footerIncluded, panelStyle: panelStyle }" />
 
 <f:section name="panel">
-    <div class="panel panel-default">
+    <div class="panel {panelStyle}">
         <f:if condition="{headerIncluded}">
             <f:then>
                 <div class="panel-heading">
