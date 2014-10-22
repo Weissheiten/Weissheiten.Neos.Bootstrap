@@ -1,6 +1,8 @@
 // alter the prototype of menu to apply the changes to each menu used
 prototype(TYPO3.Neos:Menu){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Menu.html'
+    sectionName = 'menu'
+
     site = ${site}
     attributes{
         class = 'nav navbar-nav'
@@ -11,6 +13,7 @@ prototype(TYPO3.Neos:Menu){
 prototype(TYPO3.Neos:BreadcrumbMenu){
     // this template is basically the same as in the NodeTypes package and only uses ol instead of ul like suggeested in the Bootstrap docs
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+    sectionName = 'breadcrumb'
     // attributes.class and item collection are already set - we don't need to overwrite that
 
 }
@@ -41,5 +44,37 @@ prototype(Weissheiten.Neos.Bootstrap:Panel){
     }
     panelFooter = TYPO3.Neos.NodeTypes:Text{
         @override.node = ${q(node).children('panelFooter').get(0)}
+    }
+}
+
+prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content)
+prototype(Weissheiten.Neos.Bootstrap:Media){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Media.html'
+    sectionName = 'media'
+    // Media can be used as standalone or in a list - define tag here to allow overwriting in a media list
+    tagName = 'div'
+
+    mediaHeader = ${q(node).property('mediaHeader')}
+    mediaText = ${q(node).property('mediaText')}
+
+    mediaImage = ${q(node).property('mediaImage')}
+    alternativeText = ${q(node).property('alternativeText')}
+    link = ${q(node).property('link')}
+}
+
+prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content)
+prototype(Weissheiten.Neos.Bootstrap:MediaList){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/MediaList.html'
+    sectionName = 'mediaList'
+
+    prototype(Weissheiten.Neos.Bootstrap:Media){
+        tagName = 'li'
+    }
+
+    mediaListItems = TYPO3.Neos:ContentCollection {
+        nodePath = 'mediaListItems'
+        tagName = 'ul'
+        attributes.class = "media-list"
+        // overwrite the prototype for Media and include those as list items
     }
 }

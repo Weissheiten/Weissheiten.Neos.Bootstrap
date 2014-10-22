@@ -1,4 +1,4 @@
-'Weissheitne.Neos.Bootstrap:Jumbotron':
+'Weissheiten.Neos.Bootstrap:Jumbotron':
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Jumbotron'
@@ -68,3 +68,61 @@
       type: 'TYPO3.Neos.NodeTypes:Text'
     panelItems:
       type: 'TYPO3.Neos:ContentCollection'
+
+'Weissheiten.Neos.Bootstrap:Media':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Media'
+    icon: 'icon-check-empty'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        media:
+          label: 'Media'
+          position: 11
+  properties:
+    mediaHeader:
+      type: string
+      defaultValue: 'Media header'
+    mediaText:
+      type: string
+      defaultValue: 'Media text'
+    mediaImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+    alternativeText:
+      type: string
+      ui:
+        label: 'Alternative text'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+
+'Weissheiten.Neos.Bootstrap:MediaList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Media List'
+    icon: 'icon-unchecked'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+  childNodes:
+    mediaListItems:
+      type: 'TYPO3.Neos:ContentCollection'
+
+  # available in >= 1.2
+  #constraints:
+  #  nodeTypes:
+  #    '*': false
+  #    'Weissheiten.Neos.Bootstrap:Media': true

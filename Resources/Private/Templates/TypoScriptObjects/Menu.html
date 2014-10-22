@@ -3,7 +3,9 @@
       xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers"
       xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
 
-<f:render section="itemList" arguments="{items: items, site: site, attributes: attributes}" />
+<f:section name="menu">
+    <f:render section="itemList" arguments="{items: items, site: site, attributes: attributes}" />
+</f:section>
 
 <f:section name="itemList">
     <nav class="navbar navbar-default" role="navigation">
