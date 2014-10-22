@@ -18,8 +18,7 @@ prototype(TYPO3.Neos:BreadcrumbMenu){
 
 }
 
-prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(TYPO3.Neos:Content)
-prototype(Weissheiten.Neos.Bootstrap:Jumbotron){
+prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(TYPO3.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Jumbotron.html'
     sectionName = 'jumbotron'
 
@@ -28,8 +27,8 @@ prototype(Weissheiten.Neos.Bootstrap:Jumbotron){
     }
 }
 
-prototype(Weissheiten.Neos.Bootstrap:Panel) < prototype(TYPO3.Neos:Content)
-prototype(Weissheiten.Neos.Bootstrap:Panel){
+
+prototype(Weissheiten.Neos.Bootstrap:Panel) < prototype(TYPO3.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Panel.html'
     sectionName = 'panel'
     headerIncluded = ${q(node).property('headerIncluded')}
@@ -47,8 +46,7 @@ prototype(Weissheiten.Neos.Bootstrap:Panel){
     }
 }
 
-prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content)
-prototype(Weissheiten.Neos.Bootstrap:Media){
+prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Media.html'
     sectionName = 'media'
     // Media can be used as standalone or in a list - define tag here to allow overwriting in a media list
@@ -62,8 +60,7 @@ prototype(Weissheiten.Neos.Bootstrap:Media){
     link = ${q(node).property('link')}
 }
 
-prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content)
-prototype(Weissheiten.Neos.Bootstrap:MediaList){
+prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/MediaList.html'
     sectionName = 'mediaList'
 
@@ -77,4 +74,25 @@ prototype(Weissheiten.Neos.Bootstrap:MediaList){
         attributes.class = "media-list"
         // overwrite the prototype for Media and include those as list items
     }
+}
+
+
+# based on the "YouTube" element of the NeosDemoTypo3Org package
+prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/YouTube.html'
+    sectionName = 'YouTube'
+    aspectRatio = ${q(node).property('aspectRatio')}
+
+    attributes.class = ${q(node).is('[aspectRatio=unresponsive]') ? 'video' : ' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
+/*
+    casehelper = TYPO3.TypoScript:Case{
+        attributes{
+            condition = ${q(node).property('aspectRatio') != 'unresponsive'}
+            class = ${' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
+        }
+        attributes{
+            condition = TRUE
+            class = ' video'
+        }
+    }*/
 }
