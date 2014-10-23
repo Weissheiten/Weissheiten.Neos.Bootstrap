@@ -210,6 +210,79 @@
         inspector:
           group: 'video'
 
+'Weissheiten.Neos.Bootstrap:Button':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Button'
+    icon: 'icon-minus-sign-alt'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        layout:
+          label: 'Layout'
+          position: 11
+        trigger:
+          label: 'Trigger & Events'
+          position: 12
+  properties:
+    buttonText:
+      type: string
+      defaultValue: 'Text'
+    buttonStyle:
+      type: string
+      defaultValue: 'btn-default'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Style'
+        inspector:
+          group: 'layout'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'btn-default':
+                label: 'Standard'
+              'btn-primary':
+                label: 'Primary'
+              'btn-success':
+                label: 'Success'
+              'btn-info':
+                label: 'Info'
+              'btn-warning':
+                label: 'Warning'
+              'btn-danger':
+                label: 'Danger'
+              'btn-danger':
+                label: 'Link'
+    buttonSize:
+      type: string
+      defaultValue: 'btn-std'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Size'
+        inspector:
+          group: 'layout'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'btn-xs':
+                label: 'Extra small'
+              'btn-sm':
+                label: 'Small'
+              'btn-std':
+                label: 'Standard'
+              'btn-lg':
+                label: 'Large'
+    collapseTarget:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Collapse Target ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'trigger'
+
+
 # Overwrite the NodeTypeDefinition for the Columns - this code is taken from the "TYPO3.NeosDemoTypo3Org" Package
 # to prevent having to include the whole package for these elements
 ##

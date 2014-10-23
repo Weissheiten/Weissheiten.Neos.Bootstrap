@@ -1,0 +1,8 @@
+prototype(Weissheiten.Neos.Bootstrap:Button) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Button.html'
+    sectionName = 'buttonSection'
+
+    buttonText = ${q(node).property('buttonText')}
+    buttonStyle = ${q(node).property('buttonStyle')}
+    collapseTarget = ${q(node).property('collapseTarget')}
+}
