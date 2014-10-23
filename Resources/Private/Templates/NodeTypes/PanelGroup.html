@@ -4,14 +4,7 @@
       xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers">
 
 <f:section name="panelGroup">
-    <f:if condition="{panelGroupItems}">
-        <f:then>
-            <ts:render path="panelGroupItems" />
-        </f:then>
-
-    </f:if>
-    <f:else>
-        <div>Node type restrictions are not yet provided by TYPO3 NEOS 1.1.2 - Please only add Panel Nodes inside the ContentCollection above.
-            <br />This information will be hidden after you add one or more items.</div>
-    </f:else>
+    <div>
+        <ts:render path="panelGroupItems" />
+    </div>
 </f:section>
