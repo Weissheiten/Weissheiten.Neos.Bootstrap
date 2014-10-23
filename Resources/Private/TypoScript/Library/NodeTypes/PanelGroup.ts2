@@ -1,0 +1,17 @@
+prototype(Weissheiten.Neos.Bootstrap:PanelGroup) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/PanelGroup.html'
+    sectionName = 'panelGroup'
+
+    panelGroupItems = TYPO3.Neos:ContentCollection {
+        nodePath = 'panelGroupItems'
+        tagName = 'div'
+        attributes{
+            class = "panel-group"
+            id = ${q(node).property('_name')}
+        }
+        # overwrite the prototype to have a possible collapse option in the link inside the panel add a data parent
+        prototype(Weissheiten.Neos.Bootstrap:Panel){
+            parentid = ${q(node).parents('[instanceof Weissheiten.Neos.Bootstrap:PanelGroup]').property('_name')}
+        }
+    }
+}

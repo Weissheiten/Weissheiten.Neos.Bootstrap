@@ -9,6 +9,17 @@
     jumbotronItems:
       type: 'TYPO3.Neos:ContentCollection'
 
+'Weissheiten.Neos.Bootstrap:PanelGroup':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Panel Group'
+    icon: 'icon-list'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+  childNodes:
+    panelGroupItems:
+      type: 'TYPO3.Neos:ContentCollection'
+
 'Weissheiten.Neos.Bootstrap:Panel':
   superTypes: ['TYPO3.Neos:Content']
   ui:
