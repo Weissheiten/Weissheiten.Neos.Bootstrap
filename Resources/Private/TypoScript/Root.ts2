@@ -1,6 +1,6 @@
 // alter the prototype of menu to apply the changes to each menu used
 prototype(TYPO3.Neos:Menu){
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Menu.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Menu.html'
     sectionName = 'menu'
 
     site = ${site}
@@ -12,14 +12,14 @@ prototype(TYPO3.Neos:Menu){
 // alter the prototype of breadcrumb to apply the changes to each breadcrumb used
 prototype(TYPO3.Neos:BreadcrumbMenu){
     // this template is basically the same as in the NodeTypes package and only uses ol instead of ul like suggeested in the Bootstrap docs
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Breadcrumb.html'
     sectionName = 'breadcrumb'
     // attributes.class and item collection are already set - we don't need to overwrite that
 
 }
 
 prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(TYPO3.Neos:Content){
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Jumbotron.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Jumbotron.html'
     sectionName = 'jumbotron'
 
     jumbotronItems = TYPO3.Neos:ContentCollection{
@@ -29,7 +29,7 @@ prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(TYPO3.Neos:Content){
 
 
 prototype(Weissheiten.Neos.Bootstrap:Panel) < prototype(TYPO3.Neos:Content){
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Panel.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Panel.html'
     sectionName = 'panel'
     headerIncluded = ${q(node).property('headerIncluded')}
     footerIncluded = ${q(node).property('footerIncluded')}
@@ -47,7 +47,7 @@ prototype(Weissheiten.Neos.Bootstrap:Panel) < prototype(TYPO3.Neos:Content){
 }
 
 prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content){
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/Media.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Media.html'
     sectionName = 'media'
     // Media can be used as standalone or in a list - define tag here to allow overwriting in a media list
     tagName = 'div'
@@ -61,7 +61,7 @@ prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content){
 }
 
 prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content){
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/MediaList.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/MediaList.html'
     sectionName = 'mediaList'
 
     prototype(Weissheiten.Neos.Bootstrap:Media){
@@ -79,7 +79,7 @@ prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content){
 
 # based on the "YouTube" element of the NeosDemoTypo3Org package
 prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/YouTube.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/YouTube.html'
     sectionName = 'YouTube'
     aspectRatio = ${q(node).property('aspectRatio')}
 
@@ -87,11 +87,36 @@ prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
 }
 
 # based on MultiColumn of NeosDemoTypo3Org
-prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
+prototype(Weissheiten.Neos.Bootstrap:MultiColumn) {
     attributes.class = 'row'
     columns.iterationName = 'multiColumnIteration'
 }
 
 prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
     attributes.class = ${'col-sm-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
+}
+
+##
+# "Carousel" element
+#
+prototype(Weissheiten.Neos.Bootstrap:Carousel) {
+    sectionName = 'carousel'
+    carouselItems = TYPO3.Neos:ContentCollection {
+        nodePath = 'carouselItems'
+        iterationName = 'carouselItemsIteration'
+        attributes.class = 'carousel-inner'
+    }
+
+    carouselItemArray = ${q(node).children('carouselItems').children('[instanceof TYPO3.Neos.NodeTypes:Image]')}
+
+    // Enhance image prototype for the carousel
+    prototype(TYPO3.Neos.NodeTypes:Image) {
+        // Render images in the carousel with a special template.
+        templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/CarouselItem.html'
+        sectionName = 'carouselItem'
+        attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
+
+        // We want to use the item iterator in the template so we have to store it in ts.
+        iteration = ${carouselItemsIteration}
+    }
 }

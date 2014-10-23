@@ -40,7 +40,7 @@
           group: 'layout'
     panelStyle:
       type: string
-      defaultValue: ''
+      defaultValue: 'panel-default'
       ui:
         reloadIfChanged: TRUE
         label: 'Panel style'
@@ -49,7 +49,7 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              '':
+              'panel-default':
                 label: 'Standard'
               'panel-primary':
                 label: 'Primary'
@@ -188,7 +188,7 @@
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'TYPO3.Neos.NodeTypes:TwoColumn':
+'Weissheiten.Neos.Bootstrap:TwoColumn':
   properties:
     'layout':
       defaultValue: '6-6'
@@ -212,7 +212,7 @@
 # Adjust the "ThreeColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'TYPO3.Neos.NodeTypes:ThreeColumn':
+'Weissheiten.Neos.Bootstrap:ThreeColumn':
   properties:
     'layout':
       defaultValue: '4-4-4'
@@ -237,7 +237,7 @@
 # Adjust the "FourColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'TYPO3.Neos.NodeTypes:FourColumn':
+'Weissheiten.Neos.Bootstrap:FourColumn':
   properties:
     'layout':
       defaultValue: '3-3-3-3'
@@ -248,3 +248,17 @@
               '25-25-25-25': ~
               '3-3-3-3':
                 label: '25% / 25% / 25% / 25%'
+
+##
+# A "Carousel" content element that renders "Image" child nodes into a JavaScript based slideshow
+#
+'Weissheiten.Neos.Bootstrap:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    carouselItems:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Carousel'
+    group: 'bootstrap'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
