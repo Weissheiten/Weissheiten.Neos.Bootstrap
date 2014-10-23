@@ -1,0 +1,8 @@
+// alter the prototype of breadcrumb to apply the changes to each breadcrumb used
+prototype(TYPO3.Neos:BreadcrumbMenu){
+    // this template is basically the same as in the NodeTypes package and only uses ol instead of ul like suggeested in the Bootstrap docs
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Breadcrumb.html'
+    sectionName = 'breadcrumb'
+    // attributes.class and item collection are already set - we don't need to overwrite that
+
+}

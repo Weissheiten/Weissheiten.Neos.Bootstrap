@@ -61,6 +61,23 @@
                 label: 'Warning'
               'panel-danger':
                 label: 'Danger'
+    collapsable:
+      type: string
+      defaultValue: 'uncollapsable'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Collapsable'
+        inspector:
+          group: 'layout'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'uncollapsable':
+                label: 'Not collapsable'
+              'collapse in':
+                label: 'Collapsable show'
+              'collapse':
+                label: 'Collapsable hidden'
   childNodes:
     panelHeader:
       type: 'TYPO3.Neos.NodeTypes:Headline'

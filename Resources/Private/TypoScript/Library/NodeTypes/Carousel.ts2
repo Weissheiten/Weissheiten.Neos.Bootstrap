@@ -1,0 +1,26 @@
+# Code originates from the TYPO3 Neos Demo Package
+# Section was added to allow for schema support
+##
+# "Carousel" element
+#
+prototype(Weissheiten.Neos.Bootstrap:Carousel) {
+    sectionName = 'carousel'
+    carouselItems = TYPO3.Neos:ContentCollection {
+        nodePath = 'carouselItems'
+        iterationName = 'carouselItemsIteration'
+        attributes.class = 'carousel-inner'
+    }
+
+    carouselItemArray = ${q(node).children('carouselItems').children('[instanceof TYPO3.Neos.NodeTypes:Image]')}
+
+    // Enhance image prototype for the carousel
+    prototype(TYPO3.Neos.NodeTypes:Image) {
+        // Render images in the carousel with a special template.
+        templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/CarouselItem.html'
+        sectionName = 'carouselItem'
+        attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
+
+        // We want to use the item iterator in the template so we have to store it in ts.
+        iteration = ${carouselItemsIteration}
+    }
+}

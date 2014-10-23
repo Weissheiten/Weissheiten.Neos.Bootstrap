@@ -1,0 +1,8 @@
+# based on the "YouTube" element of the NeosDemoTypo3Org package - added responsiveness support
+prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/YouTube.html'
+    sectionName = 'YouTube'
+    aspectRatio = ${q(node).property('aspectRatio')}
+
+    attributes.class = ${q(node).is('[aspectRatio=unresponsive]') ? 'video' : ' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
+}
