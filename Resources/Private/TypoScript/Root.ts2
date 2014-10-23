@@ -84,15 +84,14 @@ prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
     aspectRatio = ${q(node).property('aspectRatio')}
 
     attributes.class = ${q(node).is('[aspectRatio=unresponsive]') ? 'video' : ' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
-/*
-    casehelper = TYPO3.TypoScript:Case{
-        attributes{
-            condition = ${q(node).property('aspectRatio') != 'unresponsive'}
-            class = ${' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
-        }
-        attributes{
-            condition = TRUE
-            class = ' video'
-        }
-    }*/
+}
+
+# based on MultiColumn of NeosDemoTypo3Org
+prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
+    attributes.class = 'row'
+    columns.iterationName = 'multiColumnIteration'
+}
+
+prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
+    attributes.class = ${'col-sm-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
 }
