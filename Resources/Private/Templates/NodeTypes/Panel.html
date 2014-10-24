@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers">
+
+<f:section name="panel">
+    <div class="panel {panelStyle}">
+        <f:if condition="{headerIncluded}">
+            <f:then>
+                <div class="panel-heading">
+                    <f:if condition="{collapsable}!='uncollapsable'">
+                        <f:then>
+                            <a data-toggle="collapse" href="#{node.name}"<f:if condition="{parentid}"><f:then> data-parent="#{parentid}"</f:then></f:if>><ts:render path="panelHeader" /></a>
+                        </f:then>
+                        <f:else>
+                            <ts:render path="panelHeader" />
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:then>
+        </f:if>
+
+        <f:if condition="{collapsable}!='uncollapsable'">
+            <f:then>
+                <div id="{node.name}" class="panel-collapse {collapsable}">
+            </f:then>
+        </f:if>
+            <div class="panel-body">
+                <f:if condition="{panelItems}">
+                    <ts:render path="panelItems" />
+                </f:if>
+            </div>
+
+            <f:if condition="{footerIncluded}">
+                <div class="panel-footer"><ts:render path="panelFooter" /></div>
+            </f:if>
+        <f:if condition="{collapsable}">
+            <f:then>
+                </div>
+            </f:then>
+        </f:if>
+
+    </div>
+</f:section>
+
