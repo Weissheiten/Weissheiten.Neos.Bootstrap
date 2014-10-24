@@ -314,7 +314,7 @@
       defaultValue: false
       ui:
         reloadIfChanged: TRUE
-        label: Responsive (ignores width/height settings)
+        label: Responsive
         inspector:
           group: 'image'
 
