@@ -282,6 +282,41 @@
         inspector:
           group: 'trigger'
 
+'Weissheiten.Neos.Bootstrap:ResponsiveImage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Image']
+  ui:
+    label: 'Responsive Image'
+    icon: 'icon-picture'
+    group: 'bootstrap'
+    inlineEditable: TRUE
+  properties:
+    imageStyle:
+      type: string
+      defaultValue: ''
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Style'
+        inspector:
+          group: 'image'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'Standard'
+              'img-rounded':
+                label: 'Rounded'
+              'img-circle':
+                label: 'Circle'
+              'img-thumbnail':
+                label: 'Thumbnail'
+    responsive:
+      type: boolean
+      defaultValue: false
+      ui:
+        reloadIfChanged: TRUE
+        label: Responsive (ignores width/height settings)
+        inspector:
+          group: 'image'
 
 # Overwrite the NodeTypeDefinition for the Columns - this code is taken from the "TYPO3.NeosDemoTypo3Org" Package
 # to prevent having to include the whole package for these elements
