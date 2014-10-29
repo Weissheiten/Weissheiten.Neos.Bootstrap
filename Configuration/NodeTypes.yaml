@@ -324,7 +324,7 @@
 # Adjust the "TwoColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'Weissheiten.Neos.Bootstrap:TwoColumn':
+'TYPO3.Neos.NodeTypes:TwoColumn':
   properties:
     'layout':
       defaultValue: '6-6'
@@ -348,7 +348,7 @@
 # Adjust the "ThreeColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'Weissheiten.Neos.Bootstrap:ThreeColumn':
+'TYPO3.Neos.NodeTypes:ThreeColumn':
   properties:
     'layout':
       defaultValue: '4-4-4'
@@ -373,7 +373,7 @@
 # Adjust the "FourColumn" node type:
 # Disable some of the layout options, override labels and set the default layout
 #
-'Weissheiten.Neos.Bootstrap:FourColumn':
+'TYPO3.Neos.NodeTypes:FourColumn':
   properties:
     'layout':
       defaultValue: '3-3-3-3'
