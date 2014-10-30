@@ -4,7 +4,7 @@
     "description": "Bootstrap Node Package for TYPO3 NEOS",
     "require": {
         "typo3/flow": "*",
-        "typo3/neos":"~1.2",
+        "typo3/neos":"~1.1.2",
         "typo3/twitter-bootstrap": "*"
     },
     "autoload": {
