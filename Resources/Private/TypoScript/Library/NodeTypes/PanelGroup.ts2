@@ -11,7 +11,7 @@ prototype(Weissheiten.Neos.Bootstrap:PanelGroup) < prototype(TYPO3.Neos:Content)
         }
         # overwrite the prototype to have a possible collapse option in the link inside the panel add a data parent
         prototype(Weissheiten.Neos.Bootstrap:Panel){
-            parentid = ${q(node).parents('[instanceof Weissheiten.Neos.Bootstrap:PanelGroup]').property('_name')}
+            panelHeaderAttributes.data-parent = ${'#' + q(node).parents('[instanceof Weissheiten.Neos.Bootstrap:PanelGroup]').property('_name')}
         }
     }
 }
