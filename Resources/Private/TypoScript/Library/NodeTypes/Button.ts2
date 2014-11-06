@@ -2,7 +2,27 @@ prototype(Weissheiten.Neos.Bootstrap:Button) < prototype(TYPO3.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Button.html'
     sectionName = 'buttonSection'
 
+    // "attributes >" will not delete the subproperties (.class) - line below must be used to get it to work properly
+    attributes.class >
+
+    attributes = TYPO3.TypoScript:Case {
+        collapseTargetAvailable {
+            condition = ${q(node).property('collapseTarget')!=''}
+            renderPath = 'renderer'
+            renderer = TYPO3.TypoScript:Attributes{
+                collapseTarget = ${'#' + q(node).property('collapseTarget')}
+                data-toggle = 'collapse'
+                class = ${'btn ' + q(node).property('buttonStyle') + (q(node).is('[buttonSize=btn-std]') ? '' : ' ' + q(node).property('buttonSize'))}
+            }
+        }
+        default{
+            condition = ${true}
+            renderPath = 'renderer'
+            renderer = TYPO3.TypoScript:Attributes {
+                class = ${'btn ' + q(node).property('buttonStyle') + (q(node).is('[buttonSize=btn-std]') ? '' : ' ' + q(node).property('buttonSize'))}
+            }
+        }
+    }
+
     buttonText = ${q(node).property('buttonText')}
-    buttonStyle = ${q(node).property('buttonStyle')}
-    collapseTarget = ${q(node).property('collapseTarget')}
 }

@@ -4,8 +4,7 @@
       xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
 
 <f:section name="buttonSection">
-    <button type="button" class="btn {buttonStyle}<f:if condition="{buttonSize}!='btn-std'"> {buttonSize}</f:if>"
-    <f:if condition="{collapseTarget}!=''"> data-toggle="collapse" data-target="#{collapseTarget}"</f:if>>
+    <button type="button"{attributes -> f:format.raw()}>
         <neos:contentElement.editable property="buttonText" />
     </button>
 </f:section>
