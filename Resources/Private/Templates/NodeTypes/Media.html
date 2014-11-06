@@ -11,7 +11,8 @@
 -->
 
 <f:section name="media"><{tagName} class="media">
-            <a class="pull-left" href="<f:if condition="{link}"><f:then>{link}</f:then><f:else>#</f:else></f:if>">
+
+    <a class="pull-left" href="{link}">
                 <f:if condition="{mediaImage}">
                     <f:then>
                         <media:image class="media-object" asset="{mediaImage}" alt="{alternativeText}" title="{alternativeText}" maximumWidth="{mediaImage.maximumWidth}" maximumHeight="{mediaImage.maximumHeight}"  />

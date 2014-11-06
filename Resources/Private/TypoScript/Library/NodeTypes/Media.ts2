@@ -9,5 +9,5 @@ prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content){
 
     mediaImage = ${q(node).property('mediaImage')}
     alternativeText = ${q(node).property('alternativeText')}
-    link = ${q(node).property('link')}
+    link = ${q(node).is('[link=""]') ? '#' : q(node).property('link')}
 }
