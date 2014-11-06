@@ -4,5 +4,17 @@ prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
     sectionName = 'YouTube'
     aspectRatio = ${q(node).property('aspectRatio')}
 
-    attributes.class = ${q(node).is('[aspectRatio=unresponsive]') ? 'video' : ' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
+/*
+<iframe<f:if condition="{aspectRatio}!='unresponsive'"><f:then> class="embed-responsive-item"</f:then></f:if>
+<f:if condition="{aspectRatio}=='unresponsive'"><f:then> width="{width}" height="{height}"</f:then></f:if> frameborder="0" allowfullscreen></iframe>
+*/
+
+
+
+    attributes{
+        class = ${q(node).is('[aspectRatio=unresponsive]') ? 'video' : ' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
+        src = ${'src="http://www.youtube.com/embed/' + q(node).property('video') + '?wmode=transparent'}
+        frameborder = '0'
+        allowfullscreen = 'allowfullscreen'
+    }
 }
