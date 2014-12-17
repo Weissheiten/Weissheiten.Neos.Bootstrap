@@ -283,7 +283,7 @@
 'Weissheiten.Neos.Bootstrap:ResponsiveImage':
   superTypes: ['TYPO3.Neos.NodeTypes:Image']
   ui:
-    label: 'Responsive Image'
+    label: 'Bootstrap Image'
     icon: 'icon-picture'
     group: 'bootstrap'
     inlineEditable: TRUE
