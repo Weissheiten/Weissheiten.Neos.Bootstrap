@@ -1,0 +1,29 @@
+prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/NavTab.html'
+    sectionName = 'navTab'
+
+    navTabNavigation = TYPO3.Neos:Menu{
+        templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Partials/NavTabNavigation.html'
+        sectionName = 'navTabNavigation'
+
+        // start from the current level
+        entryLevel = 1
+        // only use nodes from the current level
+        maximumLevels = 0
+
+        itemCollection = ${q(node).children('navTabPanels').children('[instanceof Weissheiten.Neos.Bootstrap:NavTabPanel]').get()}
+        itemCollection.tablabel = 'aaa'
+
+        filter = 'Weissheiten.Neos.Bootstrap:NavTabPanel'
+
+        site = ${site}
+        attributes{
+            class = 'nav nav-tabs'
+            role = 'tablist'
+        }
+    }
+
+    navTabPanels = TYPO3.Neos:ContentCollection{
+        nodePath = 'navTabPanels'
+    }
+}
