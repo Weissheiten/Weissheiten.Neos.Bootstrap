@@ -2,7 +2,5 @@ prototype(Weissheiten.Neos.Bootstrap:NavTabPanel) < prototype(TYPO3.Neos:Content
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/NavTabPanel.html'
     sectionName = 'navTabPanel'
 
-    navTabPanelContent = TYPO3.Neos:ContentCollection{
-        nodePath = 'navTabPanelContent'
-    }
+    tablabel = ${q(node).property('tablabel')}
 }

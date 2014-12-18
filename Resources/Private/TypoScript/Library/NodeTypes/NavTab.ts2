@@ -2,6 +2,7 @@ prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/NavTab.html'
     sectionName = 'navTab'
 
+    // Build the menu for the NavTab
     navTabNavigation = TYPO3.Neos:Menu{
         templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Partials/NavTabNavigation.html'
         sectionName = 'navTabNavigation'
@@ -11,19 +12,58 @@ prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
         // only use nodes from the current level
         maximumLevels = 0
 
+        // item collection consists of all children of type NavTabPanel
         itemCollection = ${q(node).children('navTabPanels').children('[instanceof Weissheiten.Neos.Bootstrap:NavTabPanel]').get()}
-        itemCollection.tablabel = 'aaa'
 
+        // set the filter (practically redundant)
         filter = 'Weissheiten.Neos.Bootstrap:NavTabPanel'
 
-        site = ${site}
+        //  add the attributes for the menu itself
         attributes{
             class = 'nav nav-tabs'
             role = 'tablist'
         }
+
+        // add the "presentation" role to all tabs (aka menu entries) no matter what state they are in (due to this being anchors we will only have the "normal" state
+        active.attributes = TYPO3.TypoScript:Attributes {
+            class >
+            role = 'presentation'
+        }
+        current.attributes = TYPO3.TypoScript:Attributes {
+            class >
+            role = 'presentation'
+        }
+        normal.attributes = TYPO3.TypoScript:Attributes {
+            class >
+            role = 'presentation'
+        }
+        site = ${site}
     }
 
+    // set navTabPanels to a content collection with the according nodePath - we can do this because the nodetype restriction in nodetypes.yaml ensures
+    // that there will never be anything else but objects of type 'Weissheiten.Neos.Bootstrap:NavTabPanel' in here
     navTabPanels = TYPO3.Neos:ContentCollection{
         nodePath = 'navTabPanels'
+        iterationName = 'navTabItemsIteration'
+        attributes.class = 'tab-content'
+    }
+
+    // adapt the prototype for NavTabPanels rendered inside a NavTab
+    prototype(Weissheiten.Neos.Bootstrap:NavTabPanel) {
+        // Render images in the carousel with a special template.
+        templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/NavTabPanel.html'
+        sectionName = 'navTabPanel'
+        attributes{
+            class = ${'tab-pane' + (navTabItemsIteration.isFirst ? ' active' : '')}
+            role = 'tabpanel'
+            id = ${node.identifier}
+        }
+        // We want to use the item iterator in the template so we have to store it in ts.
+        iteration = ${navTabItemsIteration}
+
+        // assign the Content of the navTabPanel for rendering
+        navTabPanelContent = TYPO3.Neos:ContentCollection{
+            nodePath = 'navTabPanelContent'
+        }
     }
 }

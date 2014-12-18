@@ -331,6 +331,10 @@
           position: 11
   childNodes:
     navTabPanels:
+      constraints:
+        nodeTypes:
+          '*': false
+          'Weissheiten.Neos.Bootstrap:NavTabPanel': true
       type: 'TYPO3.Neos:ContentCollection'
 
 # Tabpanel Element - Child of NavTab element
@@ -347,11 +351,11 @@
           label: 'Layout'
           position: 11
   properties:
-    label:
+    tablabel:
       type: string
-      defaultValue: 'Label'
+      defaultValue: 'Tab label'
       ui:
-        label: 'Label'
+        label: 'Tab label'
         reloadIfChanged: TRUE
         inspector:
           group: 'layout'
