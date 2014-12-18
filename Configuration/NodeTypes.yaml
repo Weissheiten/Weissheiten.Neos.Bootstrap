@@ -18,6 +18,10 @@
     inlineEditable: TRUE
   childNodes:
     panelGroupItems:
+      constraints:
+        nodeTypes:
+          '*': false
+          'Weissheiten.Neos.Bootstrap:Panel': true
       type: 'TYPO3.Neos:ContentCollection'
 
 'Weissheiten.Neos.Bootstrap:Panel':
@@ -441,7 +445,6 @@
       constraints:
         nodeTypes:
           '*': false
-          'Weissheiten.Neos.Bootstrap:ResponsiveImage': true
           'TYPO3.Neos.NodeTypes:Image': true
       type: 'TYPO3.Neos:ContentCollection'
   ui:
