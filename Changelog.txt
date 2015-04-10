@@ -1,0 +1,32 @@
+################################
+# Bootstrap Package 1.2 stable #
+################################
+
+BREAKING CHANGES
+-----------------
+*) "Menu" and "Breadcrumbmenu" have been moved to a new namespace to avoid interference with the basic implementations that come with the core
+Please change the use of
+(TYPO3.Neos:Menu) to (Weissheiten.Neos.Bootstrap:Menu)
+and
+(TYPO3.Neos:BreadcrumbMenu) to (Weissheiten.Neos.Bootstrap:BreadcrumbMenu)
+accordingly.
+
+Changes
+--------
+*) New NodeType: NavTab (see http://getbootstrap.com/javascript/#tabs for details)
+-) currently it is not possible to make a different tab than the first one the automatically selected one when loading the page containing the NavTab
+
+*) Made use of the new possibility of restricting childnodes in ContentCollections in the following nodes:
+-) PanelGroup
+-) Carousel
+-) NavTab
+
+Notes
+------
+*) Button Node is still present but not implemented with interactive functionality yet
+*) In case you don't see all NodeTypes when adding new content please scroll down in the "add" dialog to see all elements
+
+Update 1.2.1
+-------------
+*) Added possibility to set attributes for Menu NAV element in TypoScript2
+   -) example: menu.navAttributes.class = 'navbar navbar-default navbar-fixed-top'

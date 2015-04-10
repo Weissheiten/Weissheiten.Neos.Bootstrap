@@ -1,0 +1,24 @@
+// under development until NEOS 1.2 when @IF for optional attributes is added - see Button.ts2 comment
+
+# based on the "YouTube" element of the NeosDemoTypo3Org package - added responsiveness support
+prototype(Weissheiten.Neos.Bootstrap:YouTube) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/YouTube.html'
+    sectionName = 'YouTube'
+    aspectRatio = ${q(node).property('aspectRatio')}
+    video = ${q(node).property('video')}
+/*
+<iframe<f:if condition="{aspectRatio}!='unresponsive'"><f:then> class="embed-responsive-item"</f:then></f:if>
+<f:if condition="{aspectRatio}=='unresponsive'"><f:then> width="{width}" height="{height}"</f:then></f:if> frameborder="0" allowfullscreen></iframe>
+*/
+    attributes.class >
+    attributes = TYPO3.TypoScript:Attributes{
+        src = ${'http://www.youtube.com/embed/' + q(node).property('video') + '?wmode=transparent'}
+        frameborder = '0'
+        allowfullscreen = 'allowfullscreen'
+    }
+
+    divattributes = TYPO3.TypoScript:Attributes{
+        class = ${q(node).is('[aspectRatio=unresponsive]') ? 'video' : ' video embed-responsive embed-responsive-' + q(node).property('aspectRatio')}
+    }
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers">
+
+<f:section name="jumbotron">
+    <div class="jumbotron">
+        <f:if condition="{jumbotronItems}">
+            <ts:render path="jumbotronItems" />
+        </f:if>
+    </div>
+</f:section>
+

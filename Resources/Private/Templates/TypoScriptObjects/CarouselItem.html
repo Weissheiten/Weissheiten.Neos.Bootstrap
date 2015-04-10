@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:media="http://typo3.org/ns/TYPO3/Media/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
+
+<f:section name="carouselItem">
+    <div{attributes -> f:format.raw()}>
+    <f:if condition="{image}">
+
+        <f:then>
+            <media:image asset="{image}" alt="{alternativeText}" title="{title}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}" />
+        </f:then>
+        <f:else>
+            <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" title="Dummy image" alt="Dummy image" />
+        </f:else>
+    </f:if>
+    <div class="carousel-caption">
+        <f:if condition="{hasCaption}">
+            {neos:contentElement.editable(property: 'caption')}
+        </f:if>
+    </div>
+    </div>
+</f:section>

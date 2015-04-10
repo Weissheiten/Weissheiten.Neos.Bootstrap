@@ -1,0 +1,25 @@
+{
+    "name": "weissheiten/neos-bootstrap",
+    "type": "typo3-flow-package",
+    "version": "dev-master",
+    "description": "Bootstrap Node Package for TYPO3 NEOS",
+    "homepage": "http://www.weissheiten.at",
+    "authors":[
+      {
+        "name": "Florian Weiss",
+        "email": "florian.weiss@weissheiten.at",
+        "homepage": "http://www.weissheiten.at",
+        "role": "Developer"
+      }
+    ],
+    "require": {
+        "typo3/flow": "*",
+        "typo3/neos":"~1.2",
+        "typo3/twitter-bootstrap": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Weissheiten\\Neos\\Bootstrap": "Classes"
+        }
+    }
+}

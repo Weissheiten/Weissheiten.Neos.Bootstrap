@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
+
+<f:section name="YouTube">
+    <div{divattributes -> f:format.raw()}>
+    <f:if condition="{video}!=''">
+        <f:then>
+            <iframe{attributes -> f:format.raw()}<f:if condition="{aspectRatio}!='unresponsive'"><f:then> class="embed-responsive-item"</f:then></f:if><f:if condition="{aspectRatio}=='unresponsive'"><f:then> width="{width}" height="{height}"</f:then></f:if>></iframe>
+        </f:then>
+        <f:else>
+            <p>Please specify video ID</p>
+        </f:else>
+    </f:if>
+    </div>
+</f:section>

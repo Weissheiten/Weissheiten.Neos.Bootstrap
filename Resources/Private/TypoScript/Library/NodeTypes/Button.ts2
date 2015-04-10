@@ -1,0 +1,42 @@
+// This is an attempt to streamline optional attributes via prototyping
+// TYPO3 NEOS 1.2 will include an @IF statement to handle this problem (Neos Page.ts2 in master for reference)
+
+// base attributesRenderer that contains all attributes that are shared for all cases
+prototype(Weissheiten.Neos.Bootstrap:attributesRenderer) < prototype(TYPO3.TypoScript:Attributes){
+    class = ${'btn ' + q(node).property('buttonStyle') + (q(node).is('[buttonSize=btn-std]') ? '' : ' ' + q(node).property('buttonSize'))}
+}
+
+prototype(Weissheiten.Neos.Bootstrap:attributesCase){
+    // by default the condition will be true - this should be overwritten by the user
+    condition = ${true}
+    // path of the object to render
+    renderPath = 'renderer'
+    renderer = Weissheiten.Neos.Bootstrap:attributesRenderer
+}
+
+prototype(Weissheiten.Neos.Bootstrap:Button) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Button.html'
+    sectionName = 'buttonSection'
+
+    // "attributes >" will not delete the subproperties (.class) - line below must be used to get it to work properly
+    attributes.class >
+
+    attributes = TYPO3.TypoScript:Case {
+        collapseTargetAvailable {
+            condition = ${q(node).property('collapseTarget')!=''}
+            renderPath = 'renderer'
+
+            renderer = Weissheiten.Neos.Bootstrap:attributesRenderer{
+                collapseTarget = ${'#' + q(node).property('collapseTarget')}
+                data-toggle = 'collapse'
+            }
+        }
+        default{
+            condition = ${true}
+            renderPath = 'renderer'
+            renderer = Weissheiten.Neos.Bootstrap:attributesRenderer
+        }
+    }
+
+    buttonText = ${q(node).property('buttonText')}
+}

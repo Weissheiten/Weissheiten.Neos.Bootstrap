@@ -1,0 +1,11 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Weissheiten.Neos.Bootstrap': TRUE
+    nodeTypes:
+      groups:
+        bootstrap:
+          position: 300
+          label: 'Bootstrap'
+

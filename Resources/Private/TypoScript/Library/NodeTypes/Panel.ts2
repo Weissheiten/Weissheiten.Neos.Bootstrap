@@ -1,0 +1,23 @@
+prototype(Weissheiten.Neos.Bootstrap:Panel) < prototype(TYPO3.Neos:Content){
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Panel.html'
+    sectionName = 'panel'
+    headerIncluded = ${q(node).property('headerIncluded')}
+    footerIncluded = ${q(node).property('footerIncluded')}
+    panelStyle = ${q(node).property('panelStyle')}
+    collapsable = ${q(node).property('collapsable')}
+
+    panelItems = TYPO3.Neos:ContentCollection{
+        nodePath = 'panelItems'
+    }
+    panelHeader = TYPO3.Neos.NodeTypes:Headline{
+        @override.node = ${q(node).children('panelHeader').get(0)}
+    }
+    panelHeaderAttributes = TYPO3.TypoScript:Attributes{
+        data-toggle = 'collapse'
+        href = ${'#' + node.name}
+    }
+
+    panelFooter = TYPO3.Neos.NodeTypes:Text{
+        @override.node = ${q(node).children('panelFooter').get(0)}
+    }
+}
