@@ -1,7 +1,7 @@
 {
     "name": "weissheiten/neos-bootstrap",
     "type": "typo3-flow-package",
-    "version": "0.2",
+    "version": "1.2.5",
     "description": "Bootstrap Node Package for TYPO3 NEOS",
     "require": {
         "typo3/flow": "*",
