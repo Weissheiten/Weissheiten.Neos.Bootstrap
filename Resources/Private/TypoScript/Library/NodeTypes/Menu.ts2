@@ -3,6 +3,11 @@ prototype(Weissheiten.Neos.Bootstrap:Menu) < prototype(TYPO3.Neos:Menu){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Menu.html'
     sectionName = 'menu'
 
+    navAttributes = TYPO3.TypoScript:Attributes
+    navAttributes{
+        class = 'navbar navbar-default navbar-fixed-top'
+    }
+
     site = ${site}
     attributes{
         class = 'nav navbar-nav'

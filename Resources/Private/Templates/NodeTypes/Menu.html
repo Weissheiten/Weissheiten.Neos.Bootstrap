@@ -4,31 +4,31 @@
       xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
 
 <f:section name="menu">
-    <f:render section="itemList" arguments="{items: items, site: site, attributes: attributes}" />
+    <f:render section="itemList" arguments="{items: items, site: site, attributes: attributes, navAttributes: navAttributes}" />
 </f:section>
 
 <f:section name="itemList">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- The ViewHelper can be found at: Packages/Application/TYPO3.Neos/Classes/TYPO3/Neos/ViewHelpers/Link
-                     general approach: look in Classes/Name/Of/The/Package/ViewHelpers
-                -->
-                <neos:link.node node="{site}" class="navbar-brand">{site.label}</neos:link.node>
-            </div>
-
-            <div class="navbar-collapse collapse">
-                <ul{attributes -> f:format.raw()}>
-                <f:render section="itemsList" arguments="{items: items}" />
-                </ul>
-            </div>
+    <nav{navAttributes -> f:format.raw()} role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- The ViewHelper can be found at: Packages/Application/TYPO3.Neos/Classes/TYPO3/Neos/ViewHelpers/Link
+                 general approach: look in Classes/Name/Of/The/Package/ViewHelpers
+            -->
+            <neos:link.node node="{site}" class="navbar-brand">{site.label}</neos:link.node>
         </div>
+
+        <div class="navbar-collapse collapse">
+            <ul{attributes -> f:format.raw()}>
+            <f:render section="itemsList" arguments="{items: items}" />
+            </ul>
+        </div>
+    </div>
     </nav>
 </f:section>
 

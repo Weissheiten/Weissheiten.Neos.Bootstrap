@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectResources">
-    <resource url="http://typo3.org/ns/TYPO3/Neos/ViewHelpers" location="$PROJECT_DIR$/../../../../../../Typo3Neos/Schemas/Neos.xsd" />
-    <resource url="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers" location="$PROJECT_DIR$/../../../../../../Typo3Neos/Schemas/TypoScript.xsd" />
-    <resource url="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" location="$PROJECT_DIR$/../../../../../../Typo3Neos/Schemas/Fluid.xsd" />
-    <resource url="http://typo3.org/ns/TYPO3/Media/ViewHelpers" location="$PROJECT_DIR$/../../../../../../Typo3Neos/Schemas/Media.xsd" />
-    <resource url="http://typo3.org/ns/TYPO3/Twitter/Bootstrap/ViewHelpers" location="$PROJECT_DIR$/../../../../../../Typo3Neos/Schemas/Bootstrap.xsd" />
+    <resource url="http://typo3.org/ns/TYPO3/Neos/ViewHelpers" location="/../Typo3Neos/Schemas/Neos.xsd" />
+    <resource url="http://typo3.org/ns/TYPO3/Media/ViewHelpers" location="/../Typo3Neos/Schemas/Media.xsd" />
+    <resource url="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" location="/../Typo3Neos/Schemas/Fluid.xsd" />
+    <resource url="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers" location="/../Typo3Neos/Schemas/TypoScript.xsd" />
+    <resource url="http://typo3.org/ns/TYPO3/Twitter/Bootstrap/ViewHelpers" location="/../Typo3Neos/Schemas/Bootstrap.xsd" />
   </component>
   <component name="ProjectRootManager" version="2" />
 </project>
-
