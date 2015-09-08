@@ -7,7 +7,7 @@ prototype(Weissheiten.Neos.Bootstrap:Carousel) {
     sectionName = 'carousel'
     carouselItems = TYPO3.Neos:ContentCollection {
         nodePath = 'carouselItems'
-        iterationName = 'carouselItemsIteration'
+        content.iterationName = 'carouselItemsIteration'
         attributes.class = 'carousel-inner'
     }
 
