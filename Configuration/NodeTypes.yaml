@@ -1,5 +1,6 @@
 'Weissheiten.Neos.Bootstrap:Jumbotron':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Jumbotron'
     icon: 'icon-sign-blank'
@@ -10,7 +11,8 @@
       type: 'TYPO3.Neos:ContentCollection'
 
 'Weissheiten.Neos.Bootstrap:PanelGroup':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Panel Group'
     icon: 'icon-list'
@@ -25,7 +27,8 @@
       type: 'TYPO3.Neos:ContentCollection'
 
 'Weissheiten.Neos.Bootstrap:Panel':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Panel'
     icon: 'icon-check-empty'
@@ -102,7 +105,8 @@
       type: 'TYPO3.Neos:ContentCollection'
 
 'Weissheiten.Neos.Bootstrap:MediaList':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Media List'
     icon: 'icon-list'
@@ -117,7 +121,9 @@
       type: 'TYPO3.Neos:ContentCollection'
 
 'Weissheiten.Neos.Bootstrap:Media':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos.NodeTypes:ContentImageMixin'
   ui:
     label: 'Media'
     icon: 'icon-picture'
@@ -135,31 +141,11 @@
     mediaText:
       type: string
       defaultValue: 'Media text'
-    mediaImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
-      ui:
-        label: 'Image'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'media'
-    alternativeText:
-      type: string
-      ui:
-        label: 'Alternative text'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'media'
-    link:
-      type: string
-      ui:
-        label: 'Link'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'media'
 
 # this is based on the Node of the NeosDemoTypo3Org Package
 'Weissheiten.Neos.Bootstrap:YouTube':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: YouTube
     icon: 'icon-youtube'
@@ -213,7 +199,8 @@
           group: 'video'
 
 'Weissheiten.Neos.Bootstrap:Button':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Button'
     icon: 'icon-minus-sign-alt'
@@ -285,7 +272,8 @@
           group: 'trigger'
 
 'Weissheiten.Neos.Bootstrap:ResponsiveImage':
-  superTypes: ['TYPO3.Neos.NodeTypes:Image']
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Image': TRUE
   ui:
     label: 'Bootstrap Image'
     icon: 'icon-picture'
@@ -322,7 +310,8 @@
 
 # NavTab Element
 'Weissheiten.Neos.Bootstrap:NavTab':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Togglable tab'
     icon: 'icon-table'
@@ -343,7 +332,8 @@
 
 # Tabpanel Element - Child of NavTab element
 'Weissheiten.Neos.Bootstrap:NavTabPanel':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Tab Panel'
     icon: 'icon-table'
@@ -439,7 +429,8 @@
 # A "Carousel" content element that renders "Image" child nodes into a JavaScript based slideshow
 #
 'Weissheiten.Neos.Bootstrap:Carousel':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
   childNodes:
     carouselItems:
       constraints:
