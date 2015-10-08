@@ -4,7 +4,7 @@
     "version": "dev-master",
     "description": "Neos CMS Twitter Bootstrap Plugin",
     "require": {
-        "typo3/neos": "~2.0"
+        "typo3/neos": "@dev"
     },
     "autoload": {
         "psr-0": {
