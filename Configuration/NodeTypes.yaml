@@ -123,7 +123,9 @@
 'Weissheiten.Neos.Bootstrap:Media':
   superTypes:
     'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos.NodeTypes:ContentImageMixin'
+    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
+    'TYPO3.Neos.NodeTypes:LinkMixin': TRUE
+    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': TRUE
   ui:
     label: 'Media'
     icon: 'icon-picture'
@@ -141,6 +143,10 @@
     mediaText:
       type: string
       defaultValue: 'Media text'
+    link:
+      ui:
+        inspector:
+          group: 'image'
 
 # this is based on the Node of the NeosDemoTypo3Org Package
 'Weissheiten.Neos.Bootstrap:YouTube':

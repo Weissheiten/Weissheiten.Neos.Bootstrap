@@ -4,10 +4,17 @@ prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content){
     // Media can be used as standalone or in a list - define tag here to allow overwriting in a media list
     tagName = 'div'
 
+    mediaAlignment = ${q(node).is('[alignment="right"]') ? 'media-right' : 'media-left'}
+
     mediaHeader = ${q(node).property('mediaHeader')}
     mediaText = ${q(node).property('mediaText')}
 
-    mediaImage = ${q(node).property('mediaImage')}
+    image = ${q(node).property('image')}
     alternativeText = ${q(node).property('alternativeText')}
+    title = ${q(node).property('title')}
+
     link = ${q(node).is('[link=""]') ? '#' : q(node).property('link')}
+
+    maximumWidth = 100
+    maximumHeight = 100
 }

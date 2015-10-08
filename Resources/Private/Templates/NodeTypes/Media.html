@@ -10,25 +10,27 @@
      media.foo will first try to access $media~>foo, then $media~>getFoo()
 -->
 
-<f:section name="media"><{tagName} class="media">
-
-    <a class="pull-left" href="{link}">
-                <f:if condition="{mediaImage}">
+<f:section name="media">
+    <{tagName} class="media">
+        <div class="{mediaAlignment}">
+            <a href="{link}">
+                <f:if condition="{image}">
                     <f:then>
-                        <media:image class="media-object" asset="{mediaImage}" alt="{alternativeText}" title="{alternativeText}" maximumWidth="{mediaImage.maximumWidth}" maximumHeight="{mediaImage.maximumHeight}"  />
+                        <media:image class="media-object" asset="{image}" title="{title}" alt="{alternativeText}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}"  />
                     </f:then>
                     <f:else>
                         <f:security.ifAccess privilegeTarget="TYPO3.Neos:Backend.GeneralAccess">
                             <f:if condition="{node.context.workspace.name} != 'live'">
-                                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
+                                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" width="{maximumWidth}" height="{maximumHeight}"  title="Dummy image" alt="Dummy image" class="neos-handle" />
                             </f:if>
                         </f:security.ifAccess>
                     </f:else>
                 </f:if>
             </a>
-        <div class="media-body">
-            <h4 class="media-heading"><neos:contentElement.editable property="mediaHeader" /></h4>
-            <neos:contentElement.editable property="mediaText" />
+            <div class="media-body">
+                <h4 class="media-heading"><neos:contentElement.editable property="mediaHeader" /></h4>
+                <neos:contentElement.editable property="mediaText" />
+            </div>
         </div>
     </{tagName}>
 </f:section>
