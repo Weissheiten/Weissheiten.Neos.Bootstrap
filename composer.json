@@ -1,7 +1,7 @@
 {
     "name": "weissheiten/neos-bootstrap",
     "type": "typo3-flow-plugin",
-    "version": "2.0",
+    "version": "dev-master",
     "description": "Neos CMS Twitter Bootstrap Plugin",
     "require": {
         "typo3/neos": "~2.0"
