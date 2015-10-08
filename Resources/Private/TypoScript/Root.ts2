@@ -1,4 +1,4 @@
-include: Library/NodeTypes/BreadcrumbMenu.ts2
+//include: Library/NodeTypes/BreadcrumbMenu.ts2
 include: Library/NodeTypes/Carousel.ts2
 include: Library/NodeTypes/Jumbotron.ts2
 include: Library/NodeTypes/Media.ts2
