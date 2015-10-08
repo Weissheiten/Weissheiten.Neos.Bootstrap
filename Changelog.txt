@@ -1,3 +1,13 @@
+######################################
+# Bootstrap Package 2.1 for Neos 2.0 #
+######################################
+
+Changes
+-------
+*) removed BreadCrumb -> Neos 2.0 core covers this well with: prototype(TYPO3.Neos:BreadcrumbMenu)
+
+
+
 ################################
 # Bootstrap Package 1.2 stable #
 ################################
