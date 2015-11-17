@@ -10,7 +10,7 @@ Add this repository to your composer.json:
 ```
     {
         "type": "git",
-        "url": "https://github.com/egobude/Weissheiten.Neos.Bootstrap.git"
+        "url": "https://github.com/Weissheiten/Weissheiten.Neos.Bootstrap.git"
     }
 ```
 
