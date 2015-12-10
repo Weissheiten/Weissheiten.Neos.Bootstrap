@@ -2,7 +2,6 @@
     "name": "weissheiten/neos-bootstrap",
     "type": "typo3-flow-plugin",
     "keywords": ["bootstrap", "neos"],
-    "version": "dev-master",
     "description": "Neos CMS Bootstrap Plugin, providing a variety of NodeTypes for out-of-the-box use",
     "license": "GPL-3.0+",
     "authors": [

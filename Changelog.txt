@@ -5,8 +5,8 @@
 Changes
 -------
 *) removed BreadCrumb -> Neos 2.0 core covers this well with: prototype(TYPO3.Neos:BreadcrumbMenu)
-
-
+*) minor adjustments from 2.0
+*) fixes for composer file to let versions be handled by tags instead of listing them in composer.json
 
 ################################
 # Bootstrap Package 1.2 stable #
