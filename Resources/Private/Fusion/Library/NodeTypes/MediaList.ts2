@@ -1,4 +1,4 @@
-prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content){
+prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(Neos.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/MediaList.html'
     sectionName = 'mediaList'
 
@@ -6,7 +6,7 @@ prototype(Weissheiten.Neos.Bootstrap:MediaList) < prototype(TYPO3.Neos:Content){
         tagName = 'li'
     }
 
-    mediaListItems = TYPO3.Neos:ContentCollection {
+    mediaListItems = Neos.Neos:ContentCollection {
         nodePath = 'mediaListItems'
         tagName = 'ul'
         attributes.class = "media-list"

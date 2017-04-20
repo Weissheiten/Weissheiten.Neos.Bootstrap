@@ -5,7 +5,7 @@
       xmlns:media="http://typo3.org/ns/TYPO3/Media/ViewHelpers">
 
 <!-- Comment for the <media> Element, not included in the section to prevent repeating in the output
-     Accessible properties can be looked up in Packages/Application/TYPO3.Media/Classes/TYPO3/Media/Domain/Model/ImageVariant.php
+     Accessible properties can be looked up in Packages/Application/Neos.Media/Classes/TYPO3/Media/Domain/Model/ImageVariant.php
      The fluid object can access all properties that have a getter or are public
      media.foo will first try to access $media~>foo, then $media~>getFoo()
 -->
@@ -19,9 +19,9 @@
                         <media:image class="media-object" asset="{image}" title="{title}" alt="{alternativeText}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}"  />
                     </f:then>
                     <f:else>
-                        <f:security.ifAccess privilegeTarget="TYPO3.Neos:Backend.GeneralAccess">
+                        <f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">
                             <f:if condition="{node.context.workspace.name} != 'live'">
-                                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" width="{maximumWidth}" height="{maximumHeight}"  title="Dummy image" alt="Dummy image" class="neos-handle" />
+                                <img src="{f:uri.resource(package: 'Neos.Neos', path: 'Images/dummy-image.png')}" width="{maximumWidth}" height="{maximumHeight}"  title="Dummy image" alt="Dummy image" class="neos-handle" />
                             </f:if>
                         </f:security.ifAccess>
                     </f:else>

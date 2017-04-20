@@ -1,4 +1,4 @@
-prototype(Weissheiten.Neos.Bootstrap:ResponsiveImage) < prototype(TYPO3.Neos.NodeTypes:Image){
+prototype(Weissheiten.Neos.Bootstrap:ResponsiveImage) < prototype(Neos.NodeTypes:Image){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/ResponsiveImage.html'
     sectionName = 'responsiveImage'
     imageStyle = ${q(node).property('imageStyle')}

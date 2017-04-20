@@ -1,9 +1,9 @@
 // alter the prototype of menu to apply the changes to each menu used
-prototype(Weissheiten.Neos.Bootstrap:Menu) < prototype(TYPO3.Neos:Menu){
+prototype(Weissheiten.Neos.Bootstrap:Menu) < prototype(Neos.Neos:Menu){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Menu.html'
     sectionName = 'menu'
 
-    navAttributes = TYPO3.TypoScript:Attributes
+    navAttributes = Neos.Fusion:Attributes
     navAttributes{
         class = 'navbar navbar-default navbar-fixed-top'
     }

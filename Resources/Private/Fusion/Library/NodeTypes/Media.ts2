@@ -1,4 +1,4 @@
-prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(TYPO3.Neos:Content){
+prototype(Weissheiten.Neos.Bootstrap:Media) < prototype(Neos.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Media.html'
     sectionName = 'media'
     // Media can be used as standalone or in a list - define tag here to allow overwriting in a media list

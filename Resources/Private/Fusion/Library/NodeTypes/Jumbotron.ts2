@@ -1,8 +1,8 @@
-prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(TYPO3.Neos:Content){
+prototype(Weissheiten.Neos.Bootstrap:Jumbotron) < prototype(Neos.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Jumbotron.html'
     sectionName = 'jumbotron'
 
-    jumbotronItems = TYPO3.Neos:ContentCollection{
+    jumbotronItems = Neos.Neos:ContentCollection{
         nodePath = 'jumbotronItems'
     }
 }

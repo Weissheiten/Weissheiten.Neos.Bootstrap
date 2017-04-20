@@ -1,8 +1,8 @@
-prototype(Weissheiten.Neos.Bootstrap:PanelGroup) < prototype(TYPO3.Neos:Content){
+prototype(Weissheiten.Neos.Bootstrap:PanelGroup) < prototype(Neos.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/PanelGroup.html'
     sectionName = 'panelGroup'
 
-    panelGroupItems = TYPO3.Neos:ContentCollection {
+    panelGroupItems = Neos.Neos:ContentCollection {
         nodePath = 'panelGroupItems'
         tagName = 'div'
         attributes{

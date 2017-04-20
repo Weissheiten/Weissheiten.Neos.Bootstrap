@@ -1,5 +1,5 @@
 # Code originates from the TYPO3 Neos Demo Package
 # Section was added to allow for schema support
-prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
+prototype(Neos.NodeTypes:MultiColumnItem) {
     attributes.class = ${'col-sm-' + String.split(q(node).parent().property('layout'), '-')[multiColumnIteration.index]}
 }

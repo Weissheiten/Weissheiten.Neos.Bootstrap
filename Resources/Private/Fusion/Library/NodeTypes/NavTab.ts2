@@ -1,9 +1,9 @@
-prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
+prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(Neos.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/NavTab.html'
     sectionName = 'navTab'
 
     // Build the menu for the NavTab
-    navTabNavigation = TYPO3.Neos:Menu{
+    navTabNavigation = Neos.Neos:Menu{
         templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Partials/NavTabNavigation.html'
         sectionName = 'navTabNavigation'
 
@@ -25,15 +25,15 @@ prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
         }
 
         // add the "presentation" role to all tabs (aka menu entries) no matter what state they are in (due to this being anchors we will only have the "normal" state
-        active.attributes = TYPO3.TypoScript:Attributes {
+        active.attributes = Neos.Fusion:Attributes {
             class >
             role = 'presentation'
         }
-        current.attributes = TYPO3.TypoScript:Attributes {
+        current.attributes = Neos.Fusion:Attributes {
             class >
             role = 'presentation'
         }
-        normal.attributes = TYPO3.TypoScript:Attributes {
+        normal.attributes = Neos.Fusion:Attributes {
             class >
             role = 'presentation'
         }
@@ -42,7 +42,7 @@ prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
 
     // set navTabPanels to a content collection with the according nodePath - we can do this because the nodetype restriction in nodetypes.yaml ensures
     // that there will never be anything else but objects of type 'Weissheiten.Neos.Bootstrap:NavTabPanel' in here
-    navTabPanels = TYPO3.Neos:ContentCollection{
+    navTabPanels = Neos.Neos:ContentCollection{
         nodePath = 'navTabPanels'
         iterationName = 'navTabItemsIteration'
         attributes.class = 'tab-content'
@@ -62,7 +62,7 @@ prototype(Weissheiten.Neos.Bootstrap:NavTab) < prototype(TYPO3.Neos:Content){
         iteration = ${navTabItemsIteration}
 
         // assign the Content of the navTabPanel for rendering
-        navTabPanelContent = TYPO3.Neos:ContentCollection{
+        navTabPanelContent = Neos.Neos:ContentCollection{
             nodePath = 'navTabPanelContent'
         }
     }

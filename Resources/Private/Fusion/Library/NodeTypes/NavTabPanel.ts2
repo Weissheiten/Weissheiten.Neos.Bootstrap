@@ -1,4 +1,4 @@
-prototype(Weissheiten.Neos.Bootstrap:NavTabPanel) < prototype(TYPO3.Neos:Content){
+prototype(Weissheiten.Neos.Bootstrap:NavTabPanel) < prototype(Neos.Neos:Content){
     templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/NavTabPanel.html'
     sectionName = 'navTabPanel'
 

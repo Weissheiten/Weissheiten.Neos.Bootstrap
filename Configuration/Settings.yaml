@@ -1,11 +1,11 @@
-TYPO3:
+
+Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        'Weissheiten.Neos.Bootstrap': TRUE
     nodeTypes:
       groups:
         bootstrap:
           position: 300
-          label: 'Bootstrap'
-
+          label: Bootstrap
+    fusion:
+      autoInclude:
+        Weissheiten.Neos.Bootstrap: true
