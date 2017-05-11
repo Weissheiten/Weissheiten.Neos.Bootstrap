@@ -16,7 +16,7 @@
             <a href="{link}">
                 <f:if condition="{image}">
                     <f:then>
-                        <media:image class="media-object" asset="{image}" title="{title}" alt="{alternativeText}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}"  />
+                        <media:image class="media-object" image="{image}" title="{title}" alt="{alternativeText}" maximumWidth="{maximumWidth}" maximumHeight="{maximumHeight}"  />
                     </f:then>
                     <f:else>
                         <f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">
