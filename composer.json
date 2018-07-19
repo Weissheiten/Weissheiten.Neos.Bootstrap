@@ -98,7 +98,8 @@
             "Neos.Seo-20170127154600",
             "Neos.Flow-20170127183102",
             "Neos.SwiftMailer-20161130105617",
-            "Neos.Fusion-20180211175500"
+            "Neos.Fusion-20180211175500",
+            "Neos.Fusion-20180211184832"
         ]
     }
 }
