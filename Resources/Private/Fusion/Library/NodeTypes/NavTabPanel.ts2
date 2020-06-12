@@ -1,6 +1,7 @@
 prototype(Weissheiten.Neos.Bootstrap:NavTabPanel) < prototype(Neos.Neos:Content){
-    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/NavTabPanel.html'
+    templatePath = 'resource://Weissheiten.Neos.Bootstrap/Private/Templates/TypoScriptObjects/NavTabPanel.html'
     sectionName = 'navTabPanel'
 
     tablabel = ${q(node).property('tablabel')}
+    navTabPanelContent = ${q(node).property('navTabPanels')}
 }

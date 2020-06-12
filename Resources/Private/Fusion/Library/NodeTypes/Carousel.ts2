@@ -3,8 +3,11 @@
 ##
 # "Carousel" element
 #
-prototype(Weissheiten.Neos.Bootstrap:Carousel) {
+prototype(Weissheiten.Neos.Bootstrap:Carousel) < prototype(Neos.Fusion:Template) {
+    templatePath = "resource://Weissheiten.Neos.Bootstrap/Private/Templates/NodeTypes/Carousel.html"
     sectionName = 'carousel'
+    node = ${node}
+
     carouselItems = Neos.Neos:ContentCollection {
         nodePath = 'carouselItems'
         content.iterationName = 'carouselItemsIteration'

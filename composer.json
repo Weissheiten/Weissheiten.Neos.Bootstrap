@@ -16,8 +16,8 @@
         }
     ],
     "require": {
-        "neos/neos": "~4.0",
-        "neos/nodetypes": "~4.0"
+        "neos/neos": "~5.0",
+        "neos/nodetypes": "~5.0"
     },
     "autoload": {
         "psr-0": {
@@ -102,7 +102,11 @@
             "Neos.Fusion-20180211184832",
             "Neos.Flow-20180415105700",
             "Neos.Neos-20180907103800",
-            "Neos.Neos.Ui-20190319094900"
+            "Neos.Neos.Ui-20190319094900",
+            "Neos.Flow-20190425144900",
+            "Neos.Flow-20190515215000",
+            "Neos.NodeTypes-20190917101945",
+            "Neos.NodeTypes-20200120114136"
         ]
     }
 }

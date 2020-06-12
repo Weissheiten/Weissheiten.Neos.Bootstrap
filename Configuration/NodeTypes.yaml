@@ -4,7 +4,7 @@
     'Neos.Neos:Content': true
   ui:
     label: Jumbotron
-    icon: icon-sign-blank
+    icon: icon-square
     group: bootstrap
     inlineEditable: true
   childNodes:
@@ -15,7 +15,7 @@
     'Neos.Neos:Content': true
   ui:
     label: 'Panel Group'
-    icon: icon-list
+    icon: icon-th-list
     group: bootstrap
     inlineEditable: true
   childNodes:
@@ -30,7 +30,7 @@
     'Neos.Neos:Content': true
   ui:
     label: Panel
-    icon: icon-check-empty
+    icon: icon-list-alt
     group: bootstrap
     inlineEditable: true
     inspector:
@@ -203,7 +203,7 @@
     'Neos.Neos:Content': true
   ui:
     label: Button
-    icon: icon-minus-sign-alt
+    icon: icon-square-full
     group: bootstrap
     inlineEditable: true
     inspector:
@@ -349,7 +349,7 @@
   childNodes:
     navTabPanelContent:
       type: 'Neos.Neos:ContentCollection'
-'Neos.NodeTypes:TwoColumn':
+'Neos.NodeTypes.ColumnLayouts:TwoColumn':
   properties:
     layout:
       defaultValue: 6-6
@@ -368,7 +368,7 @@
                 label: '66% / 33%'
               4-8:
                 label: '33% / 66%'
-'Neos.NodeTypes:ThreeColumn':
+'Neos.NodeTypes.ColumnLayouts:ThreeColumn':
   properties:
     layout:
       defaultValue: 4-4-4
@@ -388,7 +388,7 @@
                 label: '25% / 50% / 25%'
               3-3-6:
                 label: '25% / 25% / 50%'
-'Neos.NodeTypes:FourColumn':
+'Neos.NodeTypes.ColumnLayouts:FourColumn':
   properties:
     layout:
       defaultValue: 3-3-3-3

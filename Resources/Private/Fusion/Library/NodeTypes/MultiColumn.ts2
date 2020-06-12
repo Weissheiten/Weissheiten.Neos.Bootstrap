@@ -1,6 +1,6 @@
 # Code originates from the TYPO3 Neos Demo Package
 # Section was added to allow for schema support
-prototype(Neos.NodeTypes:MultiColumn) {
+prototype(Neos.NodeTypes.ColumnLayouts:MultiColumn) {
     attributes.class = 'row'
     columns.iterationName = 'multiColumnIteration'
 }
